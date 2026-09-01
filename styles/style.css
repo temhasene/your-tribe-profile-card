@@ -7,9 +7,12 @@
 /* Dit verwijst naar het <html> element. De <html> krijgt een lichtgele achtergrond. */
 
 html {
-  background:lightyellow;
+    background: linear-gradient(
+        to right,
+        #1749d1 50%,
+        #8585ff 50%
+    );
 }
-
 /* BODY */
 /* Hier wordt met een 'type selector' het <body> element geselecteerd. */
 /* In de <body> wordt de inhoud met "display: flex" in het midden geplaats. */
@@ -22,7 +25,7 @@ body {
   height: 100vh;
   
   font-family: open sans;
-  color: #10214e; /* de tekst kleur wordt in hex kleuren bepaald. */
+  color: #4b4e10; /* de tekst kleur wordt in hex kleuren bepaald. */
 }
 
 /* ARTICLE */
@@ -38,17 +41,19 @@ article {
   align-items: center;
   justify-content: end;
   
-  width: 50vw;
+  width: 60vw;
   max-width: 25em;
   min-width: 20em;
   
-  border-radius: 1rem;
-  background: rgb(0 239 255);
-  background: linear-gradient(0deg, rgb(0 239 255) 40%, #4e54c8 100%);
-  box-shadow: 0 0 20px 20px rgb(0 0 0 / .1);
+  border-radius: 5rem;
+  background: rgb(209, 170, 12);
+  background: linear-gradient(0deg, rgb(0, 13, 255) 40%, #4e54c8 100%);
+  box-shadow: 0 0 30px 20px rgba(46, 20, 20, 0.1);
   
-  transition: .25s;
+  transition: 0.25s;
 }
+
+
 
 /* HEADER */
 /* Hier wordt de inhoud van het <header> element gepositioneerd en uitgelijnd. */
@@ -57,6 +62,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: end;
+  background-color:red;
 }
 
 /* H1 */
@@ -70,17 +76,18 @@ h1 {
 /* P */
 /* Hier krijgt de <p> met de class slogan de styling. */
 /* Om een element met class te selecteren gebruik je een . in de selector */
-p.slogan {
+.slogan {
   font-size:1.25em;
   color:#030711;
+  background:yellow;
 }
 
 /* BUTTON */
 /* Hier krijgt de <button> de styling. */
 button {
   position: absolute;
-  right: 1rem;
-  top: 1rem;
+  right: 18rem;
+  top: 18rem;
   
   width: 2.5rem;
   height: 2.5rem;
@@ -88,7 +95,7 @@ button {
   
   border: none;
   border-radius: 50%; /* De border-radius geeft de <button> ronde hoekjes. */
-  background: rgb(0 239 255);
+  background: rgb(75, 17, 119);
   
   scale:.8;
   
