@@ -1,273 +1,100 @@
-* {
-  box-sizing: border-box; /* uitleg over wat dit is */
-}
-
-/* HTML */
-/* Hier wordt met een 'type selector' een element in de html geselecteerd. */
-/* Dit verwijst naar het <html> element. De <html> krijgt een lichtgele achtergrond. */
-
-html {
-    background: linear-gradient(
-        to right,
-        #172554 50%,
-        #6366f1 50%
-    );
-}
-/* MARK: BODY */
-/* Hier wordt met een 'type selector' het <body> element geselecteerd. */
-/* In de <body> wordt de inhoud met "display: flex" in het midden geplaats. */
-/* En krijgt de <body> en alle inhoud een font en kleur. */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  height: 10s0vh;
-  
-  font-family: open sans;
-  color: #f6f7f4; /* de tekst kleur wordt in hex kleuren bepaald. */
-}
-
-/* MARK: ARTICLE */
-/* Het <article> element krijgt hier de styling. */
-/* De inhoud wordt met "display: flex" gepositioneerd en uitgelijnd. */
-/* Er wordt een breedte meegegeven, een minimale en maximale breedte. */
-/* Het <article> element krijgt een kleur, en nog meer ... */
-article {
-  position: relative;
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: end;
-  
-  width: 60vw;
-  max-width: 25em;
-  min-width: 20em;
-  
-  border-radius: 5rem;
-  background: rgb(209, 170, 12);
-  background: linear-gradient(0deg, rgb(0, 13, 255) 40%, #4e54c8 100%);
-  box-shadow: 0 0 30px 20px rgba(46, 20, 20, 0.1);
-  
-  transition: 0.25s;
-}
 
 
-
-/* MARK: HEADER */
-/* Hier wordt de inhoud van het <header> element gepositioneerd en uitgelijnd. */
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: end;
-  background-color:color-mix(in #172554, #6366f1 percentage, red percentage 50)
-}
-
-/* H1 */
-/* Hier krijgt het <h1> element de styling. */
-h1 {
-  margin: 2rem 0 1rem 0; /* Margin is de ruimte om het element heen. Boven beginnen, met de klok mee */
-  
-  color: rgb(255, 255, 255); /* De tekst kleur wordt in rgb() bepaald. */
-}
-
-/* P */
-/* Hier krijgt de <p> met de class slogan de styling. */
-/* Om een element met class te selecteren gebruik je een . in de selector */
-
-/*MARK: Slogan */ 
-.slogan {
-  font-size:1.25em;
-  color:#030711;
-  background:rgba(11, 144, 13, 0);
-}
-
-.Memento {
-  background: linear-gradient(
-    to right,
-    #172554 50%
-    #6366f1 50%
-  );
-  padding: 50px 20px;
-  margin: 0;
-}
-/* MARK: BUTTON */
-/* Hier krijgt de <button> de styling. */
-button {
-  position: absolute;
-  right: 18rem;
-  top: 18rem;
-  
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: .25rem;
-  
-  border: none;
-  border-radius: 50%; /* De border-radius geeft de <button> ronde hoekjes. */
-  background: rgb(75, 17, 119);
-  
-  scale:.8;
-  
-  transition: .25s; /* Transities op het <button> element duren 0.25 seconden. */
-}
-
-/* Om de <button> styling te geven als iemand met de muis over het element beweegt gebruikt je :hover */
-/* :hover is een 'Pseudo-class selector', daarmee worden interacties op het element gestyled. */
-button:hover {
-  cursor: pointer;
-  background: rgb(253, 253, 253);
-}
-/* Met de 'Pseudo-class selector' :focus kan je bepalen hoe het element er uit moet zien als de tab toets op het toetsenbord wordt gebruikt. */
-button:focus {
-  outline: none;
-  background: green
-}
-dl {color: white; }
-
-.slogan {
-  color:white;
-}
-/* In het <button> element staat een <svg> voor het icoon. */
-/* Met een spatie worden alle elementen geselecteerd die in een ander element staan. */
-button svg {
-  position: absolute;
-  top: calc(1.25rem - 12px);
-  left: calc(1.25rem - 12px);
-  
-  stroke: #4e54c8;
-  
-  transition: .25s;
-  transition-delay: .25s; /* Een transitie op het <svg> element begin 0.25 seconde later. */
-}
-/* Met een komma wordt in een keer de styling op de :hover en de :focus van het <svg> element bepaald. */
-button:hover svg, button:focus svg {
-  stroke: lightyellow;
-}
-/* Met de 'Pseudo-class selector' :nth-of-type() wordt een element geselecteerd op basis van de volgorde. */
-/* Hier wordt het tweede <svg> element in de button geselecteerd. */
-button svg:nth-of-type(2) {
-  opacity: 0;
-  
-  transition-delay: 0ms;
-}
-
-/* IMG */
-/* Hier krijgt het <img> element de styling. */
-img {
-  position: relative;
-  top: 2rem;
-  
-  width: 10em;
-  height: auto;
-  
-  border: 5px solid #fff;
-  border-radius: 10em;
-  box-shadow: 0 0 2px 2px rgb(0 0 0 /.2);
-  
-  transition: 1s .15s; /* Transition Shorthand notation: Transities op het img element duren 1 seconde en beginnen 0.15 seconde later */
-}
-
-/* DL, DT, DD  */
-/* De eigenschappen zijn in de HTML opgemaakt in een Description List element (DL) */
-/* De Description List element (DL) is een lijst met termen en beschrijvingen. */
-/* In deze DL staan 3 groepen met code skills, in CSS is de layout van de DT elementen met een Grid gepositioneerd.  */
-
-dl {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "html-dd css-dd js-dd"
-    "html-dt css-dt js-dt"
-    ;
-  justify-items: center;
-  align-items: start;
-  
-  width: 100%;
-  margin-top: -3rem;
-  margin-bottom: 0;
-  padding: 5rem 0 3rem;
-  
-  text-align: center;
-  background: rgb(255 255 255);
-
-  dt {
-    margin-top: .25rem;
-    padding-top: .25rem;
-    
-    border-top: 1px solid rgb(0 0 0 / 0.3);
-    font-weight: bold;
-    
-    &:nth-of-type(1) {
-      grid-area: html-dt;
-    }
-    
-    &:nth-of-type(2) {
-      grid-area: css-dt;
-      translate:0 1rem;
-    }
-    
-    &:nth-of-type(3) {
-      grid-area: js-dt;
-    }
-  }
-
-  dd {
-    margin: 0;
-    padding-left: .3rem;
-    
-    transition: .25s .3s;
-    
-    &:nth-of-type(2) {
-      translate:0 1rem;
-    }
-  }
-}
-
-/* MARK: P */
-/* Hier krijgen alle <p> elementen een styling. */
 p {
-  margin: 0;
+    font-size:larger 
 }
 
-/* Om alleen de <p> elementen te stylen die in het <article> staat gebruik je de > de 'Child combinator selector'.
-/* Met de 'Child combinator selector' selecteer je alle <p> elementen die een directe  kinderen van het <article> zijn. */
-/* Dit selecteert dus niet de <p> in de <header>. */
-article > p {
-  width: 100%;
-  margin-top: 0;
-  padding: 3rem 2rem;
-  
-  background: rgba(201, 198, 198, 0.5);
-  border-radius: 0 0 5rem 5rem;
-  text-align: center;
+.pagina {text-align:center;}
+
+body {
+    background:linear-gradient(45deg, #5A2020 0% 50%, #171717 50% 100%);
+    min-height: 100vh;
+    
 }
 
-/* Deze styles zijn van toepassing als op de knop wordt geklikt */
-body.is-expanded {
-  font-size: 1.15em;
+.bovenkant {
+    text-align:left;
+    font-family:fantasy;
+    color:whitesmoke;
+
 }
 
-body.is-expanded article {
-  width: 60vw;
-  max-width: 60vw;
+.grote-foto {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-style: inset solid;
+      border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    color:antiquewhite;
 }
 
-body.is-expanded button svg:first-of-type {
-  opacity: 0;
-  transition-delay: 0ms;
+.kleine-fotos {
+    display: flex;
+    justify-content:center;
+    gap: 25px;
+}
+.kaart {
+    width: 200px;
 }
 
-body.is-expanded button svg:nth-of-type(2) {
-  opacity: 1;
-  transition-delay: .25s;
+    /*MARK: Kleine fotos */
+    .kaart img{
+        width: 200px;
+    height: 150px;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    object-fit:cover; border-style:inset solid;
+      border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    color:antiquewhite;
+    }
+.foto {
+    width: 200px;
+}
+.foto img {
+    width: 100px;
+    height: 150px;
+    
+}
+.ondertekst {
+    font-family:sans-serif;
+    border-left-style: ridge; color:black;
+    border-right-style:ridge; color: black;
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    border-bottom-style: groove; color:black;
+    border-top-style: groove; color: black;
+    color: antiquewhite;
+    font-family: fantasy;
+
+}
+.onderondertekst {
+    color:antiquewhite;
+    font-family:'Courier New', Courier, monospace;
+    border-left-style:ridge; color: black;
+    border-right-style: ridge; color:black;
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    border-bottom-style: groove; color: black;
+    border-top-style: groove; color: black;
+    border: width 10cm;
+    border: length 125px;
+    color: antiquewhite;
 }
 
-body.is-expanded dl dd {
-  font-size: 1.75em;
-}
-
-body.is-expanded img {
-  width: 15em;
+h2 {
+    color:#f4e8d3;
+    text-shadow: 2px 3px 5px #f4e8d3;
 }
